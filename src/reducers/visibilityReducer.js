@@ -4,12 +4,12 @@ import {
     stateStructure
 } from './_stateStructure.js'
 
-const initialState = Immutable.fromJS(stateStructure.visible);
+// const initialState = Immutable.fromJS(stateStructure.visible);
 
-console.log(initialState);
+// console.log(initialState);
 
-export default function visibilityFilter(state = initialState, action) {
-    let _state = state.toJS();
+export default function visibilityFilter(state = 'SHOW_ALL', action) {
+    console.log(state);
     switch (action.type) {
         case BASE_ACTION.SET_VISIBILITY_FILTER:
             {

@@ -31,6 +31,8 @@ export default function configureStore(initialState) {
         _m
     )
 
+    // console.log(store.getState());
+
 
     if (module.hot) {
         module.hot.accept('../reducers', () => {

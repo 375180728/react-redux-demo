@@ -106,55 +106,6 @@ export default store => next => action => {
         // 关闭重复请求限制
         delete window._FETCHING[requestUniqueKey];
 
-        // 关闭loading框
-        // if (loading) {
-        //     store.dispatch( $$BASE.closeLoading() )
-        // };
-
-        // 登录超时
-        // if ( _.includes([20101, 20102, 20103, 20111], payload.status) ) {
-        //     if (!_.includes(window.location.href, '#/login')){
-        //         next( $$BASE.openAlert('登录超时，请重新登录') );
-        //         next( $$BASE.showUI(0.3) );
-        //         return next({type: USER_TYPE.LOGOUT});
-        //     };
-        //     return next({type: 'NOTHING_TO_DO'});
-        // };
-        
-        // // 被踢下线
-        // if (payload.status == 20106) {
-        //     if (!_.includes(window.location.href, '#/login')) {
-        //         next( $$BASE.openAlert('账号已在其他地方登录，请重新登录') );
-        //         return next({type: USER_TYPE.LOGOUT});
-        //     }
-        //     return next({type: 'NOTHING_TO_DO'});
-        // }
-
-        // //禁止登陆
-        // if (payload.status == 20107) {
-        //     if (!_.includes(window.location.href, '#/login')) {
-        //         next( $$BASE.openAlert(payload.message) );
-        //         return next({type: USER_TYPE.LOGOUT});
-        //     }
-        //     return next({type: 'NOTHING_TO_DO'});
-        // }
-
-        // // token登录时
-        // if (payload.data && payload.data.token) {
-        //     window.AUTH_TOKEN = payload.data.token;
-        //     window.AUTH_EXPIRESIN = payload.data.expires_in;
-        //     $.setCookie('auth', payload.data.token);
-        //     $.setCookie('auth-expires-in', payload.data.expires_in);
-        //     store.dispatch( $$USER.getSessionByToken(payload.data.token) )
-        // }
-        // // TOKEN自动延期
-        // if (payload.authorization && payload.authorization.token) {
-        //     window.AUTH_TOKEN = payload.authorization.token;
-        //     window.AUTH_EXPIRESIN = payload.authorization.expires_in;
-        //     $.setCookie('auth', payload.authorization.token);
-        //     $.setCookie('auth-expires-in', payload.authorization.expires_in);
-        //     store.dispatch( $$USER.getSessionByToken(payload.authorization.token) )
-        // }
 
         // 完成时
         if (_done_ && _done_.length > 0) {

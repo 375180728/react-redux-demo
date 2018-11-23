@@ -4,12 +4,13 @@ import {
     stateStructure
 } from './_stateStructure.js'
 
-const initialState = Immutable.fromJS(stateStructure.todos);
+// const initialState = Immutable.fromJS(stateStructure.todos);
 
-console.log(initialState);
+// console.log(initialState);
 
-export default function todos(state = initialState, action) {
-    let _state = state.toJS();
+export default function todos(state = [], action) {
+    console.log(state);
+    console.log(action);
     switch (action.type) {
         case BASE_ACTION.ADD_TODO:
             {
@@ -21,6 +22,7 @@ export default function todos(state = initialState, action) {
                         completed: false
                     }
                 ]
+
             }
         case BASE_ACTION.TOGGLE_TODO:
             {
