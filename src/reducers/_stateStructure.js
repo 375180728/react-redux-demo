@@ -1,7 +1,4 @@
 export const stateStructure = {
-    todos: [{
-        text: 'Consider using Redux',
-        completed: true,
-    }],
+    todos: [],
     visible: 'SHOW_ALL'
 }

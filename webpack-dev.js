@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 
-var devFlagPlugin = new webpack.DefinePlugin({
+const devFlagPlugin = new webpack.DefinePlugin({
     'process.env.NODE_ENV': '"dev"'
 });
 
@@ -19,7 +19,6 @@ module.exports = {
         chunkFilename: '[name].chunk.js'
     },
     plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
             ImmutableMixin: 'react-immutable-render-mixin',

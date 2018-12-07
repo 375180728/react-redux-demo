@@ -74,19 +74,6 @@ export default store => next => action => {
         window._FETCHING[requestUniqueKey] = true;
     }
 
-    // 后端防重复请求
-    // if (_.includes(['PUT', 'POST'], _.upperCase(method))) {
-    //     data.nonce = Hex_MD5(requestUniqueKey + _.random(9999999) + Hex_MD5(JSON.stringify(data)));
-    // }
-    
-    // LOADING
-    // if (loading) {
-    //     if (_.isObject(loading)) {
-    //         store.dispatch( $$BASE.openLoading(loading.text) );
-    //     }else{
-    //         store.dispatch( $$BASE.openLoading() );
-    //     }
-    // };
 
     return request({ url, method, data }, 
     payload => {

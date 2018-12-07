@@ -1,15 +1,15 @@
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var config = require('./webpack-dev.js');
-var express = require('express');
-var http = require('http');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const config = require('./webpack-dev.js');
+const express = require('express');
+const http = require('http');
 
-var app = new(express)();
+const app = new(express)();
 
-var port = 3002;
+const port = 3002;
 
-var compiler = webpack(config);
+const compiler = webpack(config);
 
 app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
@@ -23,7 +23,7 @@ app.get("/", function(req, res) {
     res.sendFile(__dirname + '/index.html')
 })
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 server.listen(port, function() {
     console.log("Listening on %j", server.address());

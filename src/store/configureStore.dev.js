@@ -11,35 +11,21 @@ import async from '../middleware/async'
 import rootReducer from '../reducers'
 
 export default function configureStore(initialState) {
-
     var _m;
-
-    if (window.devToolsExtension) {
-        _m = compose(
-            applyMiddleware(thunk, http),
-            window.devToolsExtension()
-        )
-    } else {
-        _m = compose(
-            applyMiddleware(thunk, http)
-        )
-    }
-
+    _m = compose(
+        applyMiddleware(thunk, http)
+    )
     const store = createStore(
         rootReducer,
         initialState,
         _m
     )
-
-    // console.log(store.getState());
-
-
+    console.log(store.getState());
     if (module.hot) {
         module.hot.accept('../reducers', () => {
             const nextRootReducer = require('../reducers').default
             store.replaceReducer(nextRootReducer)
         })
     }
-
     return store
 }

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Todo from '../../components/Todo.js';
+import App from '../../components/App'
 
 
 export default class Routes extends Component {
@@ -8,7 +8,7 @@ export default class Routes extends Component {
         return (
             <Router>
                 <div>
-                    <Route path="/" component={Todo}/>
+                    <Route path="/" component={App}/>
                 </div>
             </Router>
         )
